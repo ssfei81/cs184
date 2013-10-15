@@ -62,26 +62,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="camera.cpp" />
-    <ClCompile Include="color.cpp" />
     <ClCompile Include="film.cpp" />
-    <ClCompile Include="loadscene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrix.cpp" />
-    <ClCompile Include="ray.cpp" />
-    <ClCompile Include="raytracer.cpp" />
-    <ClCompile Include="sphere.cpp" />
     <ClCompile Include="vect.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="allObjects.h" />
+    <ClInclude Include="brdf.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="CImg.h" />
     <ClInclude Include="color.h" />
     <ClInclude Include="film.h" />
-    <ClInclude Include="loadScene.h" />
     <ClInclude Include="matrix.h" />
+    <ClInclude Include="object.h" />
     <ClInclude Include="ray.h" />
+    <ClInclude Include="rayTracer.h" />
     <ClInclude Include="sphere.h" />
+    <ClInclude Include="triangle.h" />
     <ClInclude Include="vect.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

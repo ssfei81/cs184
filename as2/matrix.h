@@ -1,4 +1,6 @@
-using namespace std;
+#ifndef _MATRIX_H_
+#define _MATRIX_H_
+
 #include "vect.h"
 
 
@@ -27,3 +29,4 @@ class matrix
         matrix invert();
 
 	};
+#endif
