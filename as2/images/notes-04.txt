@@ -1,0 +1,15 @@
+CS184 Assignment 2: Ray Tracer 
+Sun Shuo (cs184-ds) and Gabriel Tan (cs184-ci)
+
+image-04
+
+No command line
+
+Time Taken
+~1 seconds
+
+Features
+Use point and directional lights
+Renders ellipsoids
+Uses Phong shading
+Computes shadows and reflections

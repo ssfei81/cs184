@@ -1,0 +1,17 @@
+CS184 Assignment 2: Ray Tracer 
+Sun Shuo (cs184-ds) and Gabriel Tan (cs184-ci)
+
+image-12
+
+No command line
+
+Time Taken
+~ 1 minute
+
+Features
+Renders spheres and polygons
+AABB implemeneted, allowing the rendering process to take mere minutes
+Applies linear transformation to objects
+Use point and directional lights
+Uses Phong shading
+Computes shadows and reflections

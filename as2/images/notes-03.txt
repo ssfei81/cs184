@@ -1,0 +1,14 @@
+CS184 Assignment 2: Ray Tracer 
+Sun Shuo (cs184-ds) and Gabriel Tan (cs184-ci)
+
+image-03
+
+No command line
+
+Time Taken
+~0 seconds
+
+Features
+Renders polygons
+Simple coloring
+Camera positioning working

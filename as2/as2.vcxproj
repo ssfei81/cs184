@@ -42,7 +42,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
+      <Optimization>MaxSpeed</Optimization>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -59,6 +59,9 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <HeapCommitSize>
+      </HeapCommitSize>
+      <HeapReserveSize>10000000</HeapReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -69,11 +72,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="allObjects.h" />
+    <ClInclude Include="bbox.h" />
     <ClInclude Include="brdf.h" />
+    <ClInclude Include="bvh.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="CImg.h" />
     <ClInclude Include="color.h" />
     <ClInclude Include="film.h" />
+    <ClInclude Include="light.h" />
     <ClInclude Include="matrix.h" />
     <ClInclude Include="object.h" />
     <ClInclude Include="ray.h" />
