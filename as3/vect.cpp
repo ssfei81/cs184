@@ -78,6 +78,11 @@ float vect::getAngle(vect vect2)
 		return acos(dotproduct);
 	}
 
+float vect::getMagnitude()
+	{
+	return sqrt(pow(this->x, 2) + pow(this->y,2) + pow(this->z, 2));
+	}
+
 
 vect vect::operator+(const vect& vect2)
 	{

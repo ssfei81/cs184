@@ -26,6 +26,7 @@ class vect
 		void setH(float);
 		vect getUnitVector();
 		float getAngle(vect vect2);
+		float getMagnitude();
 
 
 		vect operator+(const vect&);

@@ -32,7 +32,6 @@ class bezCurve
 			return this->cp[i];
 			}
 
-
         //return a struct {pt, gradient}
         bezPt bezcurveinterp(bezCurve curve, float u)
 			{
@@ -58,6 +57,7 @@ class bezPatch:bezCurve
 	{
 	private:
 		vect cp[4][4];
+		vect original_cp[4][4];
 
 	public:
 		bezPatch(){}
@@ -65,7 +65,7 @@ class bezPatch:bezCurve
 			{
 			for (int x = 0; x < 4;x++)
 				{
-				for (int y = 0; y < 4; y++) this->cp[x][y] = v[x][y];
+				for (int y = 0; y < 4; y++) {this->cp[x][y] = v[x][y]; this->original_cp[x][y] = v[x][y];}
 				}
 			}
 
@@ -81,6 +81,18 @@ class bezPatch:bezCurve
 			return t;
 			}
 
+		void resize(float scale)
+			{
+			for (int x = 0; x < 4;x++)
+				{
+				for (int y = 0; y < 4; y++) 
+					{
+					this->cp[x][y].setX(this->original_cp[x][y].getX() * scale);
+					this->cp[x][y].setY(this->original_cp[x][y].getY() * scale);
+					this->cp[x][y].setZ(this->original_cp[x][y].getZ() * scale);
+					}
+				}
+			}
 		//returns a struct {pt, normal vector}
 		bezPt bezpatchinterp(bezPatch patch, float u, float v)
 			{
@@ -92,19 +104,19 @@ class bezPatch:bezCurve
 			bezCurve vCurve = bezCurve(vPt);
 
 			vect tmp[4], uPt[4];
-			for(x = 0; x < 4;x++) uPt[0] = this->bezcurveinterp(bezCurve(patch.getCPv(x, tmp)),v).pt;
+			for(x = 0; x < 4;x++) uPt[x] = this->bezcurveinterp(bezCurve(patch.getCPv(x, tmp)),v).pt;
 			bezCurve uCurve = bezCurve(uPt);
 
 			bezPt Ptv = this->bezcurveinterp(vCurve, v);
 			bezPt Ptu = this->bezcurveinterp(uCurve, u);
 
-			vect n = (Ptv.gradient * Ptu.gradient).getUnitVector();
-			
-			bezPt pt = {Ptv.pt, n};
+			vect n; 		
 
+			n = (Ptu.gradient * Ptv.gradient);			
+			n = n.getUnitVector();
+	
+			bezPt pt = {Ptv.pt, n};
 			return pt;
 			}
 	};
-
-
 #endif

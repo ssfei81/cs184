@@ -42,6 +42,10 @@
     <IncludePath>C:\Users\Sun\Desktop\cs184\as3\glut-3.7.6-bin;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\Sun\Desktop\cs184\as3\glut-3.7.6-bin;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>C:\Users\Sun\Desktop\cs184\as3\glut-3.7.6-bin;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Sun\Desktop\cs184\as3\glut-3.7.6-bin;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -62,14 +66,18 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="bezier.h" />
+    <ClInclude Include="shaders.h" />
+    <ClInclude Include="triangle.h" />
     <ClInclude Include="vect.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="shaders.cpp" />
     <ClCompile Include="vect.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
