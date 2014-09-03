@@ -46,7 +46,7 @@ class bezCurve
             vect p = D * (1-u) + E * (u);
 			
 			//derivative
-			vect dPdu = 3 * (E-D);
+			vect dPdu = (E-D) * 3;
 
 			bezPt pt = {p,dPdu}; 
 			return pt;

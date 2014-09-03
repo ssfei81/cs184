@@ -1,0 +1,14 @@
+prefix=/usr/local/Cellar/ffmpeg/2.1.1
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libavformat
+Description: FFmpeg container format library
+Version: 55.19.104
+Requires: 
+Requires.private: libavcodec = 55.39.101
+Conflicts:
+Libs: -L${libdir} -lavformat 
+Libs.private: -framework CoreFoundation -framework VideoDecodeAcceleration -framework QuartzCore -liconv -lxvidcore -lx264 -lmp3lame -lfaac -lm -lbz2 -lz
+Cflags: -I${includedir}
